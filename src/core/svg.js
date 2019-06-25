@@ -104,11 +104,7 @@ Entry.SVG.attr = function(options, property) {
         }
 
         for (const key in options) {
-            if (key === 'y') {
-                console.group('options');
-                console.debug(options);
-                console.groupEnd('options');
-            }
+
             this.setAttribute(key, options[key]);
         }
     }
