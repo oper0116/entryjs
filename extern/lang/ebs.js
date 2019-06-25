@@ -1197,7 +1197,7 @@ Lang.Blocks = {
     "START_when_message_cast_2": "신호를 받았을 때",
     "START_when_object_click": "오브젝트를 클릭했을 때",
     "START_when_object_click_canceled": "오브젝트 클릭을 해제했을 때",
-    "START_when_run_button_click": "시작하기 버튼을 클릭했을 때",
+    "START_when_run_button_click": "시작하기 버튼을 클릭했을 때111",
     "START_when_scene_start": "장면이 시작했을때",
     "START_when_some_key_click": "키를 눌렀을 때",
     "TEXT": "글상자",

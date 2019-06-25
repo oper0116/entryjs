@@ -18,7 +18,7 @@ const templateName = (() => {
     }
 })();
 const template = path.resolve('example', templateName);
-const devServerPort = 8080;
+const devServerPort = 8081;
 
 module.exports = merge(common, {
     mode: 'development',

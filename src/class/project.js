@@ -107,7 +107,7 @@ Entry.getStartProject = function(mediaFilePath) {
                 id: '7y0y',
                 name: Lang.Blocks.entry_bot_name,
                 label: {
-                    ko: '엔트리봇',
+                    ko: '엔트리봇1111',
                     en: 'Entrybot',
                 },
                 script: [
@@ -177,7 +177,7 @@ Entry.getStartProject = function(mediaFilePath) {
                     height: 350,
                     visible: true,
                 },
-                lock: false,
+                lock: true,
                 active: true,
             },
         ],

@@ -183,6 +183,7 @@ EntryStatic.getAllBlocks = function() {
         {
             category: 'start',
             blocks: [
+                'custom_test_button_click',
                 'when_run_button_click',
                 'when_some_key_pressed',
                 'mouse_clicked',
@@ -232,6 +233,7 @@ EntryStatic.getAllBlocks = function() {
         {
             category: 'moving',
             blocks: [
+                'move_to_right',
                 'move_direction',
                 'bounce_wall',
                 'move_x',

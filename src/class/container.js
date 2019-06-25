@@ -280,13 +280,17 @@ Entry.Container = class Container {
      * @param {!Array.<object model>} objectModels
      */
     setObjects(objectModels) {
+        console.debug(';objectModels : ', objectModels);
         for (const i in objectModels) {
             const object = new Entry.EntryObject(objectModels[i]);
             this.objects_.push(object);
         }
+        console.debug('111');
         this.updateObjectsOrder();
+        console.debug('222');
         this.updateListView();
         Entry.variableContainer.updateViews();
+        console.debug('333');
         const type = Entry.type;
         if (type === 'workspace' || type === 'phone') {
             const target = this.getCurrentObjects()[0];

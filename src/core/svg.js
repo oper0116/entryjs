@@ -102,7 +102,13 @@ Entry.SVG.attr = function(options, property) {
             this.setAttributeNS(Entry.SVG.NS_XLINK, 'href', options.href);
             delete options.href;
         }
+
         for (const key in options) {
+            if (key === 'y') {
+                console.group('options');
+                console.debug(options);
+                console.groupEnd('options');
+            }
             this.setAttribute(key, options[key]);
         }
     }

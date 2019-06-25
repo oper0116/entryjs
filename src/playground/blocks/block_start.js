@@ -1,6 +1,7 @@
 module.exports = {
     getBlocks() {
         return {
+
             when_run_button_click: {
                 color: EntryStatic.colorSet.block.default.START,
                 outerLine: EntryStatic.colorSet.block.darken.START,
@@ -25,6 +26,9 @@ module.exports = {
                 class: 'event',
                 isNotFor: [],
                 func(sprite, script) {
+                    console.debug('sprite 111; ', sprite);
+                    console.debug('script ; ', script);
+                    Entry.dispatchEvent('start_test');
                     return script.callReturn();
                 },
                 event: 'start',

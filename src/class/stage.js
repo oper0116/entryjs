@@ -288,6 +288,7 @@ Entry.Stage.prototype.sortZorderRun = function() {
  * Initialize coordinate on canvas. It is toggle by Engine.
  */
 Entry.Stage.prototype.initCoordinator = function() {
+    console.debug('Entry.mediaFilePath : ', Entry.mediaFilePath);
     let tex = GEHelper.newSpriteWithCallback(Entry.mediaFilePath + 'workspace_coordinate.png');
     this.coordinator = Object.assign(tex, {
         scaleX: 0.5,

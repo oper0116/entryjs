@@ -55,7 +55,7 @@
         <script src="../extern/lang/ko.js"></script>
 
         <!--socket.io-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.5/socket.io.js"></script> -->
 
         <!--codemirror-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.23.0/codemirror.js"></script>
@@ -71,15 +71,236 @@
         <% } %>
         <!--main script-->
         <script>
+
+            var test = {
+                "objects":[
+                    {
+                    "id":"7y0y",
+                    "name":"엔트리봇111",
+                    "script":[
+        [{
+            "id": "dn5a",
+            "x":40,
+            "y":50,
+            "type":"when_run_button_click","params":[null],"statements":[],"movable":null,"deletable":1,"emphasized":false,"readOnly":null,"copyable":true,"extensions":[]},{"id":"5tbn","x":0,"y":0,"type":"repeat_basic","params":[{"id":"utdy","x":0,"y":0,"type":"number","params":[10],"statements":[],"movable":null,"deletable":1,"emphasized":false,"readOnly":null,"copyable":true,"extensions":[]},null],"statements":[[{"id":"6c3t","x":0,"y":0,"type":"move_direction","params":[{"id":"cea4","x":0,"y":0,"type":"number","params":[10],"statements":[],"movable":null,"deletable":1,"emphasized":false,"readOnly":null,"copyable":true,"extensions":[]},null],"statements":[],"movable":null,"deletable":1,"emphasized":false,"readOnly":null,"copyable":true,"extensions":[]}]],"movable":null,"deletable":1,"emphasized":false,"readOnly":null,"copyable":true,"extensions":[]}]],
+            "objectType":"sprite",
+            "rotateMethod":"free",
+            "scene":"7dwq",
+            "sprite":{
+            "pictures":[
+                {
+                    "id":"vx80",
+                    "dimension":{
+                        "width":284,
+                        "height":350
+                    },
+                    "fileurl":"http://210.182.60.11/smartux/hdtv/banner/1560404137367.jpg",
+                    "name":"엔트리봇_걷기1",
+                    "scale":100
+                },
+                {
+                    "id":"4t48",
+                    "dimension":{
+                    "width":284,
+                    "height":350
+                },
+                    "fileurl":"/lib/entry-js/images/media/entrybot2.png",
+                    "name":"엔트리봇_걷기2",
+                    "scale":100
+                }
+            ],
+            "sounds":[
+                {
+                "duration":1.3,
+                "ext":".mp3",
+                "id":"8el5",
+                "fileurl":"/lib/entry-js/images/media/bark.mp3",
+                "name":"강아지 짖는소리"
+                }
+    ]
+    },
+    "selectedPictureId":"vx80",
+    "lock":true,
+    "entity":{
+    "x":0,
+    "y":0,
+    "regX":142,
+    "regY":175,
+    "scaleX":0.3154574132492113,
+    "scaleY":0.3154574132492113,
+    "rotation":0,
+    "direction":90,
+    "width":284,
+    "height":350,
+    "font":"undefinedpx ",
+    "visible":true
+    }
+    }
+    ],
+    "scenes":[
+    {
+    "id":"7dwq",
+    "name":"장면 1"
+    }
+    ],
+    "variables":[
+    {
+    "name":"초시계",
+    "id":"brih",
+    "visible":false,
+    "value":"0",
+    "variableType":"timer",
+    "isCloud":false,
+    "cloudDate":false,
+    "object":null,
+    "x":134,
+    "y":-70
+    },
+    {
+    "name":" 대답 ",
+    "id":"1vu8",
+    "visible":false,
+    "value":"0",
+    "variableType":"answer",
+    "isCloud":false,
+    "cloudDate":false,
+    "object":null,
+    "x":150,
+    "y":-100
+    }
+    ],
+    "messages":[],
+    "functions":[],
+    "speed":60,
+    "interface":{
+    "canvasWidth":541,
+    "menuWidth":308,
+    "object":"7y0y"
+    },
+    "expansionBlocks":{
+    }
+}
+
+            var ProjectSchema ={
+                speed: 60,
+                objects: [
+                {
+                        entity: {
+                            direction: 90,
+                            font: "undefinedpx",
+                            height: 424,
+                            regX: 480,
+                            regY: 270,
+                            rotation: 0,
+                            scaleX: 0.3,
+                            scaleY: 0.3,
+                            visible: true,
+                            width: 462,
+                            x: 0,
+                            y: 0,
+                        },
+                        id: "7y0y",
+                        lock: true,
+                        name: "아기돼지",
+                        objectType: "sprite",
+                        rotateMethod: "free",
+                        scene: "7dwq",
+                        selectedPictureId: "vx80",
+                        sprite: {
+                            pictures: [
+                                {
+                                    id: "vx80",
+                                    dimension:{
+                                        width: 462,
+                                        height: 424
+                                    },
+                                    fileurl: "/lib/entry-js/images/pig.png",
+                                    name: "아기돼지",
+                                    scale: 100
+                                },
+                            ],
+                            sounds: []
+                        }
+                    },
+                    {
+                        entity: {
+                            direction: 90,
+                            font: "undefinedpx",
+                            height: 540,
+                            regX: 480,
+                            regY: 270,
+                            rotation: 0,
+                            scaleX: 0.5,
+                            scaleY: 0.5,
+                            visible: true,
+                            width: 960,
+                            x: 0,
+                            y: 0,
+                        },
+                        id: "7y0y",
+                        lock: true,
+                        name: "거대 폭포",
+                        objectType: "sprite",
+                        rotateMethod: "free",
+                        scene: "7dwq",
+                        selectedPictureId: "ct21",
+                        sprite: {
+                            pictures: [
+                                {
+                                    dimension: {
+                                        height: 540,
+                                        scaleX: 0.5,
+                                        scaleY: 0.5,
+                                        width: 960,
+                                    },
+                                    filename: "1560404137367",
+                                    fileurl: "/lib/entry-js/images/bg.png",
+                                    id: "ct21",
+                                    name: "거대 폭포_1"
+                                }
+                            ],
+                            sounds: []
+                        }
+                    }
+                ],
+                scenes: [{
+                    id: '7dwq',
+                    name: '장면1'
+                }],
+                messages: [],
+                functions: [],
+                variables: []
+            };
+
             window.PUBLIC_PATH_FOR_ENTRYJS = 'lib/entry-js/dist/';
             $(document).ready(function() {
                 var initOption = {
                     type: 'workspace',
+                    soundeditable: false,
+                    pictureeditable: false
                 };
+
+
+
                 Entry.init(document.getElementById('workspace'), initOption);
-                Entry.enableArduino();
-                Entry.loadProject();
+                // Entry.loadProject(ProjectSchema);
+                Entry.loadProject(ProjectSchema);
+                // Entry.loadProject();
+
+                // var project = Entry.exportProject();
+
+                // console.debug('project11: ', JSON.stringify(project));
+                // console.debug('project22: ', JSON.parse(project));
+                Entry.addEventListener('start_test', function(){
+                    console.debug('start_test');
+                });
+
+                Entry.addEventListener('end', function() {
+                    // console.debug('end!');
+                    // Entry.toast.success('성공', '성공입니다.', true);
+                })
             });
+
         </script>
     </body>
 </html>

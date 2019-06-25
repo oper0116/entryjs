@@ -37,30 +37,30 @@ Entry.EntryObject = class {
 
             this.lock = model.lock ? model.lock : false;
             this.isEditing = false;
-
+            console.debug('/!!!');
             if (this.objectType === 'sprite') {
                 this.selectedPicture = !model.selectedPictureId
                     ? this.pictures[0]
                     : this.getPicture(model.selectedPictureId);
             }
-
+            console.debug('222');
             this.scene = Entry.scene.getSceneById(model.scene) || Entry.scene.selectedScene;
-
+            console.debug('333');
             this.setRotateMethod(model.rotateMethod);
-
+            console.debug('444');
             //entity
             this.entity = new Entry.EntityObject(this);
             this.entity.injectModel(
                 this.selectedPicture ? this.selectedPicture : null,
                 model.entity ? model.entity : this.initEntity(model)
             );
-
+            console.debug('555');
             this.clonedEntities = [];
 
             Entry.stage.loadObject(this);
 
             const pictures = this.pictures;
-
+            console.debug('333');
             for (const i in pictures) {
                 const picture = pictures[i];
                 picture.objectId = this.id;

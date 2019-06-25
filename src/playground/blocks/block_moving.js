@@ -19,6 +19,89 @@ module.exports = {
         }
 
         return {
+            move_to_right: {
+                color: EntryStatic.colorSet.block.default.MOVING,
+                outerLine: EntryStatic.colorSet.block.darken.MOVING,
+                skeleton: 'basic',
+                statements: [],
+                params: [
+                    {
+                        type: 'Block',
+                        accept: 'string',
+                        defaultType: 'number',
+                    },
+                    {
+                        type: 'Indicator',
+                        img: 'block_icon/moving_icon.svg',
+                        size: 11,
+                    }
+                ],
+                events: {},
+                def: {
+                    params: [
+                        {
+                            type: 'number',
+                            params: ['1'],
+                        },
+                        null
+                    ],
+                    type: 'move_to_right',
+                },
+                paramsKeyMap: {
+                    VALUE: 0,
+                },
+                class: 'walk',
+                isNotFor: [],
+                func(sprite, script) {
+                    console.debug('script : ', script);
+                    // let value = script.getBooleanValue('BOOL', script);
+                    if (script.frame === undefined) {
+                        script.frame = 0;
+                    }
+                    console.debug('script.frame : ', script.frame);
+                    const value = script.getNumberValue('VALUE', script);
+
+                    const picture = sprite.parent.getNextPicture(sprite.picture.id);
+                    sprite.setImage(picture);
+
+                    sprite.setX(
+                        sprite.getX() +
+                            value *
+                                Math.cos(
+                                    (sprite.getRotation() + sprite.getDirection() - 90) /
+                                        180 *
+                                        Math.PI
+                                )
+                    );
+                    sprite.setY(
+                        sprite.getY() -
+                            value *
+                                Math.sin(
+                                    (sprite.getRotation() + sprite.getDirection() - 90) /
+                                        180 *
+                                        Math.PI
+                                )
+                    );
+                    if (sprite.brush && !sprite.brush.stop) {
+                        sprite.brush.lineTo(sprite.getX(), sprite.getY() * -1);
+                    }
+
+
+                    if (script.frame < 50) {
+                        script.frame += 1;
+                        return script;
+                    }
+
+                    if (this.block.getNextBlock() === null) {
+                        console.debug('end');
+                        Entry.dispatchEvent('end');
+                    }
+
+                    delete script.frame;
+                    return script.callReturn();;
+                },
+                syntax: { js: [], py: ['Entry.move_to_right'] },
+            },
             move_direction: {
                 color: EntryStatic.colorSet.block.default.MOVING,
                 outerLine: EntryStatic.colorSet.block.darken.MOVING,
@@ -388,6 +471,8 @@ module.exports = {
                 class: 'move_relative',
                 isNotFor: [],
                 func(sprite, script) {
+                    console.debug('sprite ; ', sprite);
+                    console.debug('script ; ', script);
                     const value = script.getNumberValue('VALUE', script);
                     sprite.setX(sprite.getX() + value);
                     if (sprite.brush && !sprite.brush.stop) {
