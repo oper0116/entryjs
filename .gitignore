@@ -26,7 +26,6 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
-dist
 
 # external libraries
 extern/closure-library
@@ -34,8 +33,12 @@ extern/closure-library
 .DS_Store
 
 *.map
+!dist/*.map
 
 .vscode/*
-dist
-dist/entry.js
 .idea/
+
+test
+test_util
+webpack_config
+example
